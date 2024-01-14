@@ -1,0 +1,77 @@
+.register {
+    text-align: center;
+    border : 1px solid black;
+    max-width: 270px;
+    margin: 20px auto;
+}
+
+.register form {
+    height: 300px;
+    padding: 10px;
+}
+
+.register form input{
+    text-align: center;
+
+}
+
+.index {
+    text-align: center;
+    border : 1px solid black;
+    max-width: 270px;
+    margin: 60px auto;
+
+}
+
+.index form {
+    height: 250px;
+    padding: 10px;
+}
+
+.index form input{
+    text-align: center;
+
+}
+
+
+.account {
+    text-align: center;
+    border : 3px solid rgb(147, 0, 0);
+    max-width: 270px;
+    margin: 0 auto;
+    border-radius: 3px;
+    margin-top: 20px;
+    
+}
+
+.account form {
+    padding: 10px;
+}
+
+
+.account form input{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    text-align: center;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 24px;
+}
