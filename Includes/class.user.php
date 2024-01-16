@@ -316,6 +316,40 @@ class user {
 }
 */
 
+    public function pullcategory($getcate){
+
+        $getcateinfo = $this->conn->prepare("SELECT * FROM table_book WHERE category_fk = :cate_id");
+
+        $getcateinfo->bindParam("cate_id", $getcate, PDO::PARAM_STR);
+        $getcateinfo->execute();
+
+        $gettingcateinfo = $getcateinfo->fetchAll(PDO::FETCH_ASSOC);
+        return $gettingcateinfo;
+    }
+
+    public function singlebookToShow($getbook){
+
+        $getbookinfo = $this->conn->prepare(
+            "SELECT * 
+            FROM table_book 
+            INNER JOIN table_author ON table_book.author_fk = table_author.author_id
+            INNER JOIN table_illustrator ON table_book.illustrator_fk = table_illustrator.illustrator_id
+            INNER JOIN table_category ON table_book.category_fk = table_category.category_id
+            INNER JOIN table_genre ON table_book.genre_fk = table_genre.genre_id
+            INNER JOIN table_series ON table_book.series_fk = table_series.series_id
+            INNER JOIN table_publisher ON table_book.publisher_fk = table_publisher.publisher_id
+            INNER JOIN table_language ON table_book.lang_fk = table_language.language_id
+            INNER JOIN table_age ON table_book.age_fk = table_age.age_id
+            INNER JOIN table_bookstatus ON table_book.bookstatus_fk = table_bookstatus.bookstatus_id
+            WHERE book_id = :book_id");
+
+        $getbookinfo->bindParam("book_id", $getbook, PDO::PARAM_STR);
+        $getbookinfo->execute();
+
+        $gettingbookinfo = $getbookinfo->fetchAll(PDO::FETCH_ASSOC);
+        return $gettingbookinfo;
+    }
+
 
     
 

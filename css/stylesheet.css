@@ -53,9 +53,24 @@
     text-align: center;
 }
 
+.Categories {
+    display: flex; 
+    margin-top: 90px;
+    padding: 10px;
+}
+.card {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 18rem;
+    margin-left: 70px; 
+}
 
-
-
+.books {
+    display: flex; 
+    margin-top: 90px;
+    padding: 10px;
+}
 
 
 

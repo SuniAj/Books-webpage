@@ -27,6 +27,9 @@ if (isset($_POST["submit_search"])) {
 }
 */
 
+$categories = $conn->query("SELECT * FROM table_category LIMIT 5");
+
+
 ?>
 
 <h1 class="text-center mt-5">Search For Book</h1>
@@ -37,4 +40,18 @@ if (isset($_POST["submit_search"])) {
     </form>
 </div>
 
-
+<div class="Categories">
+    <?php
+    foreach($categories as $row){
+        echo "
+    <div class='card' style='width: 18rem;'>
+            <img src='img/Siu.jpg' class='card-img-top' alt='...'>
+        <div class='card-body'>
+            <h5 class='card-title'>{$row['category_name']}</h5>
+            <p class='card-text'>Some quick </p>
+            <a href='singlecategory.php?cateIdToEdit={$row['category_id']}' class='btn btn-primary'>Read More</a>
+        </div>
+    </div>
+    ";
+    }?>
+</div>
