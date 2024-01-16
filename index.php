@@ -37,7 +37,5 @@ if(isset($_POST['login'])){
 
         <input type="submit" class="m-3" id="button1" name="login" value="Login"><br>
 
-        <!-- <input herf="register.php" type="submit" class="mb-3" id="button2" name="register" value="Register"><br> -->
-        <span>Not User Yet?</span>&nbsp;<a type="submit" href="register.php" class="mb-3">Register Now!</a><br>
     </form>
 </div>

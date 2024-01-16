@@ -272,6 +272,50 @@ class user {
             return $this->errorMessage;
         }
     }
+/*
+    public function searchquery($searchQuery)
+{
+    $query = $this->conn->prepare(
+        "SELECT *
+        FROM table_book 
+            INNER JOIN table_author ON table_book.author_fk = table_author.author_id
+            INNER JOIN table_illustrator ON table_book.illustrator_fk = table_illustrator.illustrator_id
+            INNER JOIN table_category ON table_book.category_fk = table_category.category_id
+            INNER JOIN table_genre ON table_book.genre_fk = table_genre.genre_id
+            INNER JOIN table_series ON table_book.series_fk = table_series.series_id
+            INNER JOIN table_publisher ON table_book.publisher_fk = table_publisher.publisher_id
+            INNER JOIN table_language ON table_book.lang_fk = table_language.language_id
+            INNER JOIN table_age ON table_book.age_fk = table_age.age_id
+        WHERE
+            book_title LIKE :search_query
+            OR book_desc LIKE :search_query
+            OR book_year = :search_query
+            OR book_page = :search_query
+            OR book_price = :search_query
+            OR author_fk = :search_query
+            OR illustrator_fk = :search_query
+            OR category_fk = :search_query
+            OR genre_fk = :search_query
+            OR series_fk = :search_query
+            OR publisher_fk = :search_query
+            OR lang_fk = :search_query
+            OR age_fk = :search_query
+    ");
+            
+    $query->bindValue(':search_query', $searchQuery, PDO::PARAM_STR);
+    $query->execute();
+
+    $errorInfo = $query->errorInfo();
+
+    if ($errorInfo[0] !== '00000') {
+        echo "Error Code: " . $errorInfo[0] . "<br>";
+        echo "Error Message: " . $errorInfo[2] . "<br>";
+    }
+
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+*/
+
 
     
 

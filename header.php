@@ -30,16 +30,14 @@ if (session_status() == PHP_SESSION_NONE) {
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-dark py-4">
-    <div class="container-fluid">
-        <a class="navbar-brand text-light" href="home.php">LoggingSystem</a>
+    <div class="d-flex justify-content-center align-content-center">
+        <a class="navbar-brand text-light" href="home.php">Books Webpage</a>
         <div class="headerdiv">
-            <?php
-            if (!$user->checkloginstatus()) {
-                ?>
-                <a class="btn btn-light text-right" href="index.php">Login</a>
-                <a class="btn btn-light text-right" href="register.php">Register</a>
+        <a class="btn btn-dark" id="headerlables" href="Books.php">Books</a>
+        <a class="btn btn-dark" id="headerlables" href="aboutus.php">About us</a>
+        <a class="btn btn-dark" id="headerlables" href="contactus.php">Contact us</a>
+
                 <?php
-            }
             if ($user->checkloginstatus()) {
                 ?>
                 <a class="btn btn-light" href="account.php">Account</a>
