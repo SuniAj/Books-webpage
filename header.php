@@ -1,7 +1,7 @@
 <?php
 include "Includes/class.user.php";
 include "Includes/config.php";
-include "functions.php";
+include "Includes/functions.php";
 
 if (isset($_POST['logout'])) {
     if ($user->Logout()) {
