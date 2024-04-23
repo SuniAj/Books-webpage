@@ -166,26 +166,12 @@ function searchquery($conn, $searchQuery)
         $updateQuery->execute();
     }
 
-    function createbook($conn, $title, $description, $author, $illustrator, $age_recommendation, $category, $genre, $series, $language, $pub_year, $publisher, $num_of_pages, $price, $rating, $is_featured, $cover, $currentbook){
+    function createbook($conn, $title, $description, $author, $illustrator, $age_recommendation, $category, $genre, $series, $language, $pub_year, $publisher, $num_of_pages, $price, $rating, $is_featured) {
 
-        $stmt = $conn->prepare("UPDATE table_book 
-        SET book_title = :title, 
-        book_desc = :bookdesc
-        age_fk = :agerecom, 
-        author_fk = :author, 
-        illustrator_fk = :illustrator, 
-        category_fk = :category, 
-        genre_fk = :genre, 
-        series_fk = :serie, 
-        lang_fk = :language, 
-        book_year = :pubyear, 
-        publisher_fk = :publisher, 
-        book_page = :numofpages, 
-        book_price = :price, 
-        book_rating = :rating, 
-        book_featured = :isFeatured, 
-        book_picture = :cover 
-        WHERE book_id = :book_id");
+        $stmt = $conn->prepare("INSERT INTO table_book 
+            (book_title, book_desc, age_fk, author_fk, illustrator_fk, category_fk, genre_fk, series_fk, lang_fk, book_year, publisher_fk, book_page, book_price, book_rating, book_featured, book_picture) 
+            VALUES 
+            (:title, :bookdesc, :agerecom, :author, :illustrator, :category, :genre, :serie, :language, :pubyear, :publisher, :numofpages, :price, :rating, :isFeatured, '100.jpg')");
     
         // Bind parameters
         $stmt->bindParam(':title', $title, PDO::PARAM_STR);
@@ -203,15 +189,14 @@ function searchquery($conn, $searchQuery)
         $stmt->bindParam(':price', $price, PDO::PARAM_INT);
         $stmt->bindParam(':rating', $rating, PDO::PARAM_INT);
         $stmt->bindParam(':isFeatured', $is_featured, PDO::PARAM_INT);
-        $stmt->bindParam(':cover', $cover, PDO::PARAM_STR);
-        $stmt->bindParam(':book_id', $currentbook, PDO::PARAM_INT);
-        
-        if($stmt->execute()) {
-            echo "Book updated successfully.";
+    
+        if ($stmt->execute()) {
+            echo "Book created successfully.";
         } else {
-            echo "Error updating book: " . $stmt->errorInfo()[2];
+            echo "Error creating book: " . $stmt->errorInfo()[2];
         }
     }
+    
     
     function deleteBook($conn, $booktodelete){
 

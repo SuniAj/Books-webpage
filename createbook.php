@@ -9,27 +9,18 @@ if($user->checkloginstatus()){
 else{
     $user->redirect("createbook.php");
 }
-if(isset($_GET['booktoedit'])){
-    $currentBook = $_GET['booktoedit'];
-}
-else {
-		$errorMessage = "No book has been chosen.";
-}
+
 
 if(isset($_POST['form-submit'])) {
-    // Get form data
-    createbook($conn, $_POST['titel'], $_POST['description'], $_POST['author'], $_POST['illustrator'], $_POST['bagerecom'], $_POST['bcategory'], $_POST['bgenre'], $_POST['bseries'], $_POST['language'], $_POST['pubyear'], $_POST['bpublisher'], $_POST['numofpages'], $_POST['price'], $_POST['brating'], $is_featured, $cover, $currentBook);
-    
-    $is_featured = isset($_POST['featuredcheck']) ? 1 : 0;
 
-    // File upload
-    $cover = '';
-    if(isset($_FILES['cover']) && $_FILES['cover']['error'] === UPLOAD_ERR_OK) {
-        $cover = $_FILES['cover']['name']; // Use the name of the uploaded file
-        $targetDir = "uploads/"; // Directory to store uploaded images
-        $targetFile = $targetDir . basename($_FILES["cover"]["name"]);
-        move_uploaded_file($_FILES["cover"]["tmp_name"], $targetFile);
-    }
+	if(isset($_POST['featuredcheckedit'])){
+		$isFeatured = 1;
+		  }
+		  else {
+		$isFeatured = 0;
+		  }
+    createbook($conn, $_POST['titel'], $_POST['description'], $_POST['author'], $_POST['illustrator'], $_POST['bagerecom'], $_POST['bcategory'], $_POST['bgenre'], $_POST['bseries'], $_POST['language'], $_POST['pubyear'], $_POST['bpublisher'], $_POST['numofpages'], $_POST['price'], $_POST['brating'], $isFeatured);
+    
 }
 ?>
 
