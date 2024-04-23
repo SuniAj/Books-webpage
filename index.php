@@ -93,17 +93,39 @@ $featured = $conn->query("SELECT * FROM table_book WHERE book_featured = 1 LIMIT
     <div class="row">
       <!-- First Column: Header -->
       <div class="col-md-6 ">
-        <div class="header1 column-header m-2">
-          <h2 class="text-white">Who we are</h2>
+        <div class="column-header">
+          <h2 class="header1 text-white text-center">Who we are</h2>
           <p class="text-white">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing making it look like readable English. Many desktop publishing It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing</p>
         </div>
       </div>
       <!-- Second Column: Image -->
       <div class="col-md-6">
         <div class="column-image">
-          <img class="m-2" src="img/siu.jpg" alt="Placeholder Image">
+          <img class="rounded mt-4" id='img_card' src="img/siu.jpg" alt="Placeholder Image">
         </div>
       </div>
     </div>
   </div>
   </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- First Column: Header -->
+      <div class="col-md-6">
+        <div class="column-image">
+          <img class="rounded mt-4" id='img_card' src="img/siu.jpg" alt="Placeholder Image">
+        </div>
+      </div>
+      <!-- Second Column: Image -->
+      <div class="col-md-6 ">
+        <div class="column-header">
+          <h2 class="header1 text-center">Contact Info </h2>
+          <p class="text-center"> First Name, Last Name: Robert Johnson </br> Phone Number: 004 412 2019 Email </br> Address: robert@novoresume.com </br> First Name, Last Name: Robert Johnson </br> Phone Number: 004 412 2019 Email </br> Address: robert@novoresume.com </br> First Name, Last Name: Robert Johnson </br> Phone Number: 004 412 2019 Email </br> Address: robert@novoresume.com  </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <?php
+  include "footer.php";
+  ?>
