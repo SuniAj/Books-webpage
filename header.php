@@ -1,6 +1,7 @@
 <?php
 include "Includes/class.user.php";
 include "Includes/config.php";
+include "functions.php";
 
 if (isset($_POST['logout'])) {
     if ($user->Logout()) {
@@ -30,33 +31,39 @@ if (session_status() == PHP_SESSION_NONE) {
     <script src="javascript/script.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-dark py-4">
-    <div class="d-flex justify-content-center align-content-center">
-        <a class="navbar-brand text-light" href="home.php">Books Webpage</a>
-        <div class="headerdiv">
-        <a class="btn btn-dark" id="headerlables" href="Books.php">Books</a>
-        <a class="btn btn-dark" id="headerlables" href="aboutus.php">About us</a>
-        <a class="btn btn-dark" id="headerlables" href="contactus.php">Contact us</a>
-
-                <?php
+<nav class="navbar navbar-expand-lg bg-black py-4">
+    <div class="container d-flex">
+        <a class="navbar-brand text-light" href="index.php">Books Webpage</a>
+        <div class="headerdiv text-center">
+            <div class="d-flex">
+                <a class="btn btn-dark" id="headerlables" href="index.php">Home</a>
+                <a class="btn btn-dark" id="headerlables" href="Books.php">Books</a>
+                <a class="btn btn-dark" id="headerlables" href="aboutus.php">About us</a>
+                <a class="btn btn-dark" id="headerlables" href="contactus.php">Contact us</a>
+            </div>
+            
+            <?php
             if ($user->checkloginstatus()) {
                 ?>
-                <a class="btn btn-light" href="account.php">Account</a>
-                <?php
-                if ($user->checkuserole(20)) {
-                    echo "<a href='admin.php' class='m-1 btn btn-danger'>Admin Page</a>";
-                }
-                ?>
-                <form method='post' class="">
-                    <input type="submit" class="m-1 btn btn-light text-right" id="button3" name="logout"
-                           value="Logout"><br>
-                </form>
+                <div id="rightheaderting" class="d-flex">
+                    <a class="btn btn-light" href="account.php">Account</a>
+                    <?php
+                    if ($user->checkuserole(20)) {
+                        echo "<a href='admin.php' class='m-1 btn btn-danger'>Admin Page</a>";
+                    }
+                    ?>
+                    <form method='post' class="">
+                        <input type="submit" class="m-1 btn btn-light text-right" id="button3" name="logout"
+                               value="Logout"><br>
+                    </form>
+                </div>
                 <?php
             }
             ?>
         </div>
     </div>
 </nav>
+
 
 <!-- Your page content goes here -->
 

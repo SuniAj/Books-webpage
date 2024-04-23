@@ -2,7 +2,7 @@
 include "header.php";
 
 if(!$user->checkloginstatus()){
-    $user->redirect('home.php');
+    $user->redirect('index.php');
 
 }
 

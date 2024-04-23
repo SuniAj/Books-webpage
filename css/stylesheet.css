@@ -55,13 +55,11 @@
 
 .Categories {
     display: flex; 
-    margin-top: 90px;
+    margin-top: 50px;
     padding: 10px;
 }
 .card {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    
     width: 18rem;
     margin-left: 70px; 
 }
@@ -70,9 +68,22 @@
     display: flex; 
     margin-top: 90px;
     padding: 10px;
+    justify-content: baseline;
+}
+.header1 {
+    margin-top: 70px;
 }
 
+.RecentlyAdded{
+    display: flex; 
+    margin-top: 50px;
+    padding: 10px;
+}
 
+.card #img_card {
+    width: 200px !important;
+    height: 200px !important;
+}
 
 
 

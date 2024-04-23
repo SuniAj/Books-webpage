@@ -31,6 +31,9 @@ if(isset($_POST['search'])){
     </form>
 </div>
 
+<a class="btn btn-outline-success" href="editbook.php">Edit Books</a>
+<a class="btn btn-outline-success" href="createbook.php">Create Book</a>
+
 <div class="d-flex justify-content-center m-5">
     <?php
     if(isset($userlist)){
