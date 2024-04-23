@@ -11,13 +11,13 @@ if($user->checkloginstatus()){
 if(isset($_GET['booktoedit'])){
     $currentBook = $_GET['booktoedit'];
 	$bookData = selectSingleBook($conn, $currentBook);
-    
 	
 	}
 	
 	else {
 		$errorMessage = "No book has been chosen.";
 }
+
 
 	if(isset($_POST['updatebook'])){
 		if(isset($_POST['featuredcheckedit'])){
@@ -40,7 +40,7 @@ if(isset($_GET['booktoedit'])){
         <form method="post" action="" enctype="multipart/form-data">
 	    <h3>Edit Book</h3>
 	    <label for="edittitel">Title:</label><br />
-	    <input type="text" id="titel" placeholder="" class="form-control"  style="width: 300px;" value="<?php if(isset ($bookData['book_title'])) {echo $bookData['book_title'];}?>" name="edittitel" required="required"><br />
+	    <input type="text" id="edittitel" placeholder="" class="form-control"  style="width: 300px;" name="edittitel" required="required"><?php if(isset ($bookData['book_title'])) {echo $bookData['book_title'];}?><br />
 	    <label for="editdescription">desc:</label><br />
 	    <textarea rows="7" cols="35" id="description" placeholder="" class="form-control" style="width: 300px;" name="description" required="required"><?php if(isset ($bookData['book_desc'])) {echo $bookData['book_desc'];}?></textarea><br />
 

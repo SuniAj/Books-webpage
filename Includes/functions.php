@@ -123,7 +123,8 @@ function searchquery($conn, $searchQuery)
         $selectSingleBook = $conn->prepare("SELECT * FROM table_book WHERE book_id = :currentbbook");
         $selectSingleBook->bindParam(':currentbbook', $currentbook, PDO::PARAM_INT);
         $selectSingleBook->execute();
-        return $selectSingleBook->fetch(PDO::FETCH_ASSOC);
+        return $selectSingleBook->fetch(PDO::FETCH_ASSOC);           
+            
     }
     
     function updateBook($conn, $title, $agerecom, $author, $illustrator, $category, $genre, $serie, $language, $pubyear, $publisher, $numofpages, $price, $isFeatured, $cover, $book_id) {

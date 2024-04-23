@@ -184,6 +184,6 @@ if(isset($_POST['form-submit'])) {
     <label for="cover">Pärmblad:</label><br />
 	<input type="file" name="cover" id="cover" value="<?php if(isset ($bookData['book_cover'] )) {echo $bookData['book_cover'];}?>"><br><br>
 
-    <input type="submit" class="btn btn-success" name="form-submit" value="Update">
+    <input type="submit" class="btn btn-success" name="form-submit" value="Create Book">
 
 </form>
